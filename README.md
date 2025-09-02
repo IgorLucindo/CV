@@ -4,16 +4,12 @@ Welcome to my GitHub repository containing my Curriculum Vitae (CV). Here you ca
 
 ## CV Preview
 
-You can view my CV directly below:
+![My CV](./assets/images/cv-page1.png)
+![My CV](./assets/images/cv-page2.png)
+
+You can also click the link below to see the PDF version of my CV:
 
 ![My CV](./assets/docs/CV_Igor_Lucindo_Cardoso.pdf)
-
-> Note: Some GitHub markdown renderers might not display PDFs directly. You can download the PDF to view it fully.
-
-## Files in this repository
-
-- `cv.pdf` – PDF version of my CV.  
-- `cv.docx` / `cv.md` / `cv.tex` *(if applicable)* – Source files of my CV.
 
 ## Contact
 
