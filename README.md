@@ -4,8 +4,8 @@ Welcome to my GitHub repository containing my Curriculum Vitae (CV). Here you ca
 
 ## CV Preview
 
-![My CV](./assets/images/cv-page1.png)
-![My CV](./assets/images/cv-page2.png)
+![My CV](./assets/images/cv1.png)
+![My CV](./assets/images/cv2.png)
 
 You can also click the link below to see the PDF version of my CV:
 
