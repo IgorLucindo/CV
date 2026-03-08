@@ -1,4 +1,4 @@
-# My CV Repository
+# Igor Cardoso's CV
 
 Welcome to my GitHub repository containing my Curriculum Vitae (CV). Here you can find both the source files and a PDF version of my CV for easy viewing.
 
