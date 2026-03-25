@@ -1,0 +1,38 @@
+name: Build and Update CV
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**/*.tex' # Only triggers when LaTeX files change
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write 
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            cv.tex
+            resume.tex
+
+      - name: Convert PDF to PNG
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+          # This creates images named cv-page-1.png, cv-page-2.png
+          pdftoppm cv.pdf cv-page -png -rx 300 -ry 300
+          pdftoppm resume.pdf resume-page -png -rx 300 -ry 300
+
+      - name: Commit and Push generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-compile CV PDF and generate PNGs"
+          file_pattern: '*.pdf *.png'
