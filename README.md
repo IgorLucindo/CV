@@ -7,9 +7,10 @@ Welcome to my GitHub repository containing my Curriculum Vitae (CV). Here you ca
 ![My CV](./assets/images/cv-page-1.png)
 ![My CV](./assets/images/cv-page-2.png)
 
-You can also click the link below to see the PDF version of my CV:
+You can also click the link below to see the PDF version of my CV and Résumé:
 
 [My CV](https://cdn.jsdelivr.net/gh/IgorLucindo/CV@main/assets/docs/cv.pdf)
+[My Résumé](https://cdn.jsdelivr.net/gh/IgorLucindo/CV@main/assets/docs/resume.pdf)
 
 ## Contact
 
