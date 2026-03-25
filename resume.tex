@@ -1,0 +1,202 @@
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\usepackage[most]{tcolorbox}
+\usepackage{multicol}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\parindent}{0pt}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom lists
+\newcommand{\resumeItem}[1]{\item{#1}}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+
+\begin{document}
+\fontfamily{ppl}\selectfont % Palatino
+
+% Header
+\begin{center}
+    {\Huge\textbf{Igor Lucindo Cardoso}}
+\end{center}
+\vspace{-5mm}
+
+\begin{center}
+    \small{
+    \href{mailto:Igor.Cardoso@ttu.edu}{Igor.Cardoso@ttu.edu} \,|\, 
+    \socialicon{\faGlobe} \href{https://igorlucindo.github.io}{igorlucindo.github.io} \,|\, 
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/igorlucindo/}{igorcardoso} \,|\, 
+    \socialicon{\faGithub} \href{https://github.com/igorlucindo}{igorlucindo}
+    }
+\end{center}
+
+% Summary
+\vspace{-5.5mm}
+\section{\textbf{Professional Summary}}
+\vspace{1mm}
+\small{
+\begin{itemize}[leftmargin=10pt]
+    \item PhD student specializing in Operations Research, Mixed-Integer Programming (MIP), and Graph Theory.
+    \vspace{-1mm}
+    \item Published author with research focused on GPU-accelerated optimization and decision tree algorithms.
+    \vspace{-1mm}
+    \item Experienced in developing full-stack optimization tools using Python, CUDA, and Gurobi.
+\end{itemize}
+}
+
+% Education
+\vspace{-5mm}
+\section{\textbf{Education}}
+\vspace{1mm}
+
+\textbf{Texas Tech University (TTU)} \hspace*{\fill} 2025 – Present \\
+Ph.D. in Industrial Engineering \hspace*{\fill} GPA: 4.00/4.00 
+\vspace{1.5mm}
+
+\textbf{Getulio Vargas Foundation (FGV)} \hspace*{\fill} 2023 – 2024 \\
+M.A. Courses in Mathematical Modeling
+\vspace{1.5mm}
+
+\textbf{Military Institute of Engineering (IME)} \hspace*{\fill} 2020 – 2024 \\
+B.S. in Electronic Engineering \hspace*{\fill} GPA: 8.25/10.00
+
+
+% Publications
+\vspace{-1.5mm}
+\section{\textbf{Publications}}
+\vspace{1mm}
+
+\noindent\hangindent=1em\hangafter=1
+\textbf{Cardoso, I.}, Teodoro, G., Validi, H. (2026). \textbf{A Polytime and Interpretable Approach for Solving Wordle}. Submitted to \textit{Operations Research}.
+\vspace{0.5mm}
+
+\noindent\hangindent=1em\hangafter=1
+Gutierrez, R., \textbf{Cardoso, I.}, Validi, H. (2026). \textbf{Sport Scheduling to Minimize Travels at the FIFA World Cup 2026}. Submitted to \textit{Optimization Letters}.
+\vspace{0.5mm}
+
+\noindent\hangindent=1em\hangafter=1
+\textbf{Cardoso, I.}, et al. (2024). \href{https://ieeexplore.ieee.org/document/10596873}{\textbf{Comparing Pre-Trained Object Detection Models for Autonomous Grasp on Affordable Prosthetic Hands}}. \textit{IEEE MeMeA}.
+
+\vspace{1mm}
+\textit{\small{Manuscripts in Progress}}
+
+\noindent\hangindent=1em\hangafter=1
+\textbf{Cardoso, Igor} and Validi, Hamidreza.
+\textbf{On Solving the Network-Based Portfolio Optimization Problems}.
+\textit{Manuscript in preparation}, 2026.
+
+
+% Research Experience
+\vspace{-2mm}
+\section{\textbf{Research Experience}}
+\vspace{1mm}
+
+\textbf{Research Assistant, Texas Tech University (TTU)} \hspace*{\fill} 2025 – Present
+\vspace{-1mm}
+\resumeItemListStart
+    \resumeItem{Developing novel algorithms for NP-hard combinatorial problems, leveraging GPU acceleration and decomposition techniques to solve large-scale instances.}
+    \vspace{-0.5mm}
+    \resumeItem{Advisor: Dr. Hamidreza Validi.}
+\resumeItemListEnd
+\vspace{1mm}
+
+\textbf{Research Experience for Undergraduates, Memorial University (MUN)} \hspace*{\fill} 2023
+\vspace{-1mm}
+\resumeItemListStart
+     \resumeItem{Developed autonomous grasping capabilities for a prosthetic hand by integrating machine learning, computer vision, and predictive modeling to drive system optimization.}
+    \vspace{-0.5mm}
+    \resumeItem{Advisor: Dr. Vinicius P. da Fonseca.}
+\resumeItemListEnd
+
+
+% Honors & Awards
+\vspace{-2mm}
+\section{\textbf{Honors \& Awards}}
+\vspace{1mm}
+\begin{itemize}[leftmargin=10pt, noitemsep] % 'noitemsep' saves space
+    \item TTU Tye Industrial Endowment Engineering Scholarship \hspace*{\fill} 2026
+    \item INFORMS Student Chapter Annual Award (Cum Laude) \hspace*{\fill} 2025
+    \item 1st place, Shell Eco-marathon "The Road to 2050" \hspace*{\fill} 2021
+    \item 5th place, Petrobras Challenge (RoboIME) \hspace*{\fill} 2021
+    \item Gold Medal, Brazilian Math Olympiad (OBMEP) \hspace*{\fill} 2018
+\end{itemize}
+
+
+% Affiliations
+\vspace{-5.5mm}
+\section{\textbf{Affiliations \& Activities}}
+\vspace{1mm}
+\resumeItemListStart
+    \resumeItem{\textbf{INFORMS Student Chapter:} Active member engaging in seminars and collaborative research.}
+    \resumeItem{\textbf{Journal Club Presenter:} Discussing and analyzing peer-reviewed research in Operations Research.}
+    \resumeItem{\textbf{Previous Activities:} Robotics Club (RoboIME), Shell Eco-marathon Team.}
+\resumeItemListEnd
+
+
+% Software & Projects
+\vspace{-3mm}
+\section{\textbf{Software \& Projects}}
+\vspace{0.5mm}
+
+\textbf{Wordle Optimization Solver} \hspace*{\fill} \textit{Python, CUDA, Decision Trees} \\
+GPU-accelerated solver achieving a theoretically optimal 3.42 average guesses. \href{https://igorlucindo.github.io/wordle-optimization-GAME/}{\color{darkblue}[View App]}
+\vspace{0.5mm}
+
+\textbf{FIFA World Cup 2026 Scheduler} \hspace*{\fill} \textit{Python, JS, MIP Solvers} \\
+Interactive web app using MIP to optimize match scheduling and minimize travel. \href{https://igorlucindo.github.io/fifa-world-cup-2026-scheduler-APP/}{\color{darkblue}[View App]}
+\vspace{0.5mm}
+
+\textbf{Expense Splitter} \hspace*{\fill} \textit{Python, Linear Programming} \\
+Optimization tool to minimize transactions required to settle shared expenses. \href{https://igorlucindo.github.io/expense-splitter-APP/}{\color{darkblue}[View App]}
+
+
+% Skills
+\vspace{-3mm}
+\section{\textbf{Skills}}
+\begin{tabbing}
+    \hspace{4cm} \= \kill
+    Programming \> Python, C/C++, Matlab, Julia, Java, JavaScript, HTML, CSS, FPGA, SQL \\
+    Tools \> Gurobi, Cuda/GPU, Git, \LaTeX, Linux, NetworkX, ROS, OpenCV, Arduino \\
+    Languages \> Portuguese (native), English (fluent), French (intermediate) \\
+\end{tabbing}
+
+
+\end{document}

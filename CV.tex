@@ -1,0 +1,365 @@
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+
+% Hyperlink setup (moved after fancyhdr to address warning)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{Igor Lucindo Cardoso}}
+\end{center}
+\vspace{-6mm}
+
+\begin{center}
+    \small{
+    \href{mailto:Igor.Cardoso@ttu.edu}{Igor.Cardoso@ttu.edu} \,|\, 
+    \socialicon{\faGlobe} \href{https://igorlucindo.github.io}{igorlucindo.github.io} \,|\, 
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/igorlucindo/}{igorcardoso} \,|\, 
+    \socialicon{\faGithub} \href{https://github.com/igorlucindo}{igorlucindo}
+    }
+\end{center}
+\vspace{-6mm}
+
+\begin{center}
+    \small{Lubbock, TX}
+\end{center}
+
+\vspace{-4mm}
+
+
+% Objective
+\section{\textbf{Objective}}
+\vspace{2mm}
+\small{
+PhD student eager to contribute to advancements in Operations Research, with a focus on large-scale optimization. Interested in integrating expertise in engineering and mathematical modeling to tackle complex real-world problems.
+}
+
+\section{\textbf{Education}}
+\vspace{2mm}
+
+2025 - Present \hspace{1.5mm} Ph.D. in Industrial Engineering, \textbf{Texas Tech University (TTU)}
+\vspace{-1mm}
+\begin{itemize}[leftmargin=80pt]
+    \item Research interests: Optimization, Mixed-Integer Programming (MIP), Graph Theory. GPA: 4.00/4.00
+\end{itemize}
+
+2023 - 2024 \hspace{1.5mm}~~~~~ M.A. Courses in Mathematical Modeling, \textbf{Getulio Vargas Foundation (FGV)}
+\vspace{-1mm}
+\begin{itemize}[leftmargin=80pt]
+    \item Relevant coursework: Measure Theory, Probability Theory
+\end{itemize}
+
+2020 - 2024 \hspace{1.5mm}~~~~~ B.S. in Electronic Engineering, \textbf{Military Institute of Engineering (IME)}
+\vspace{-1mm}
+\begin{itemize}[leftmargin=80pt]
+    \item IME is the oldest and one of the best ranked engineering schools in Brazil. GPA: 8.25/10.00
+\end{itemize}
+\vspace{-2mm}
+
+
+% Publications
+\section{\textbf{Publications}}
+\vspace{2mm}
+
+\noindent\hangindent=1em\hangafter=1
+\textbf{Cardoso, Igor}, Teodoro, Gabriel, and Validi, Hamidreza.
+\textbf{A Polytime and Interpretable Approach for Solving Wordle}.
+Submitted to \textit{Operations Research}, 2026.
+\vspace{2mm}
+
+\noindent\hangindent=1em\hangafter=1
+Gutierrez, Rogelio, \textbf{Cardoso, Igor}, and Validi, Hamidreza.
+\textbf{Sport Scheduling to Minimize Travels at the FIFA World Cup 2026}.
+Submitted to \textit{Optimization Letters}, 2026.
+\vspace{2mm}
+
+\noindent\hangindent=1em\hangafter=1
+\textbf{Cardoso, Igor}, Gomes, Carlos, Rosa, Paulo F.F. and da Fonseca, Vinicius Prado (2024). \href{https://ieeexplore.ieee.org/document/10596873}{\textbf{Comparing Pre-Trained Object Detection Models for Autonomous Grasp on Affordable Prosthetic Hands}}. In: \textit{MeMeA 2024 - IEEE Medical Measurements \& Applications}.
+\vspace{2mm}
+
+\textit{\small{Manuscripts in Progress}}
+\vspace{1mm}
+
+\noindent\hangindent=1em\hangafter=1
+\textbf{Cardoso, Igor} and Validi, Hamidreza.
+\textbf{On Solving the Network-Based Portfolio Optimization Problems}.
+\textit{Manuscript in preparation}, 2026.
+
+
+% Research Experience
+\section{\textbf{Research Experience}}
+\vspace{2mm}
+
+\textbf{Research Assistant, Texas Tech University (TTU)} \hspace*{\fill} 2025 – Present
+\vspace{-1mm}
+\begin{itemize}[leftmargin=10pt]
+    \item Conducting doctoral research in Operations Research, focusing on optimization, Mixed-Integer Programming (MIP), and graph theory, with ongoing work aimed at publication in prestigious optimization journals.
+    \vspace{-1mm}
+    \item Advisor: Dr. Hamidreza Validi.
+\end{itemize}
+
+\textbf{Research Experience for Undergraduates at Memorial University of Newfoundland (MUN)} \hspace*{\fill} 2023
+\vspace{-1mm}
+\begin{itemize}[leftmargin=10pt]
+    \item Developed autonomous grasping capabilities for a prosthetic hand by integrating machine learning, computer vision, and predictive modeling to drive system optimization.
+    \vspace{-1mm}
+    \item Project Advisor: Dr. Vinicius P. da Fonseca.
+\end{itemize}
+\vspace{-2mm}
+
+
+% Awards
+\section{\textbf{Honors \& Awards}}
+\vspace{2mm}
+
+\begin{itemize}[leftmargin=10pt]
+    \item TTU Tye Industrial Endowment Engineering Scholarship, Texas Tech University \hspace*{\fill} 2026
+    \item Student Chapter Annual Award (Cum Laude), INFORMS \hspace*{\fill} 2025
+    \item 1st place in "The Road to 2050" competition, Shell Eco-marathon Team \hspace*{\fill} 2021
+    \item 5th place in Petrobras Challenge, Latin American Robotics Competition, RoboIME \hspace*{\fill} 2021
+    \item Gold and Silver Medals, Brazilian Mathematical Olympiad of Public Schools (OBMEP) \hspace*{\fill} 2018 – 2019
+\end{itemize}
+
+
+% Extracurricular Experience
+\section{\textbf{Extracurricular Experience}}
+\vspace{2mm}
+
+\textbf{INFORMS Student Chapter, Texas Tech University} \hspace*{\fill} 2025 -- Present
+\vspace{-1mm}
+\begin{itemize}[leftmargin=10pt]
+    \item Active member engaging with the research community in Operations Research.
+    \vspace{-1mm}
+    \item Attended seminars and collaborated with peers to strengthen knowledge in optimization and Operations Research.
+\end{itemize}
+
+\pagebreak
+
+\textbf{Journal Club, Texas Tech University} \hspace*{\fill} 2025 -- Present
+\vspace{-1mm}
+\begin{itemize}[leftmargin=10pt]
+    \item Presenter in Journal Club sessions, discussing and analyzing peer-reviewed research in Operations Research.
+\end{itemize}
+
+\textbf{American Airlines Scheduling Project} \hspace*{\fill} 2025
+\vspace{-1mm}
+\begin{itemize}[leftmargin=10pt]
+\item Developed mixed-integer programming models to optimize aircraft scheduling for American Airlines.
+\end{itemize}
+
+\textbf{Shell Eco-marathon Team} \hspace*{\fill} 2021 -- 2023
+\vspace{-1mm}
+\begin{itemize}[leftmargin=10pt]
+    \item Participated as a team member in the Shell Eco-marathon, focusing on sustainable engineering solutions.
+\end{itemize}
+
+\textbf{Robotics Club - RoboIME} \hspace*{\fill} 2021 -- 2023
+\vspace{-1mm}
+\begin{itemize}[leftmargin=10pt]
+    \item Active member of the Robotics Club at Military Institute of Engineering.
+    \vspace{-1mm}
+    \item Contributed to projects involving machine learning and computer vision.
+\end{itemize}
+
+
+% Projects
+\section{\textbf{Software \& Projects}}
+\vspace{2mm}
+
+\textbf{Wordle Optimization Solver} \hspace*{\fill} 2025
+\vspace{-1mm}
+\begin{itemize}[leftmargin=10pt]
+    \item Implemented a \textbf{GPU-accelerated} decision tree algorithm to solve Wordle with an efficient average of 3.421 guesses.
+    \item \textit{Tech Stack:} Python, CUDA, Decision Trees. \href{https://igorlucindo.github.io/wordle-optimization-GAME/}{\color{darkblue}[View App]}
+\end{itemize}
+
+\textbf{FIFA World Cup 2026 Scheduler} \hspace*{\fill} 2025
+\vspace{-1mm}
+\begin{itemize}[leftmargin=10pt]
+    \item Developed an interactive web app using \textbf{Mixed-Integer Programming (MIP)} to optimize tournament schedules, minimizing team travel distance while enforcing stadium availability constraints.
+    \item \textit{Tech Stack:} Python, JavaScript, Optimization Solvers. \href{https://igorlucindo.github.io/fifa-world-cup-2026-scheduler-APP/}{\color{darkblue}[View App]}
+\end{itemize}
+
+
+\textbf{Expense Splitter} \hspace*{\fill} 2025
+\vspace{-1mm}
+\begin{itemize}[leftmargin=10pt]
+    \item Built a tool utilizing optimization models to minimize the number of transactions required to settle shared expenses.
+    \item \textit{Tech Stack:} Python, Linear Programming. \href{https://igorlucindo.github.io/expense-splitter-APP/}{\color{darkblue}[View App]}
+\end{itemize}
+
+
+% Skills
+\section{\textbf{Skills}}
+\vspace{2mm}
+
+\begin{tabbing}
+    \hspace{4cm} \= \kill
+    Programming \> Python, C/C++, Matlab, Julia, Java, JavaScript, HTML, CSS, FPGA, SQL \\
+    Tools \> Gurobi, Cuda/GPU, Git, \LaTeX, Linux, NetworkX, ROS, OpenCV, Arduino, Cloud Firestore \\
+    Languages \> Portuguese (native), English (fluent), French (intermediate) \\
+    Relevant Courses \> Network Optimization, Measure Theory, Probability Theory, Machine Learning, \\ \> Algorithms, Computer Vision, Computer Architecture.
+\end{tabbing}
+
+
+% References
+\section{\textbf{References}}
+\vspace{2mm}
+
+\noindent
+\begin{tabular}{ c l }
+    \raisebox{-0.5\height}{\includegraphics[width=1cm]{images/TTU_logo.png}} 
+        & \quad \textbf{Dr. Hamidreza Validi (advisor)} - \texttt{hvalidi@ttu.edu} \\
+        \raisebox{-0.5\height}{\includegraphics[width=1cm]{images/TTU_logo.png}} 
+        & \quad \textbf{Dr. Burak Eksioglu (professor)} - \texttt{burak.eksioglu@ttu.edu} \\
+        \raisebox{-0.5\height}{\includegraphics[width=1cm]{images/TTU_logo.png}} 
+        & \quad \textbf{Dr. Ningji Wei (professor)} - \texttt{ningji.wei@ttu.edu} \\
+    \raisebox{-0.5\height}{\includegraphics[width=1.2cm]{images/MUN_logo.jpg}} 
+        & \quad \textbf{Dr. Vinicius P. da Fonseca (advisor)} - \texttt{vpradodafons@mun.ca} \\
+\end{tabular}
+
+\end{document}
