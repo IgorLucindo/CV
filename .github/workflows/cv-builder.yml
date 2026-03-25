@@ -31,9 +31,8 @@ jobs:
           # 1. Create the directories if they don't already exist
           mkdir -p assets/images assets/docs
           
-          # 2. Generate PNGs and send them directly into the images folder
-          pdftoppm cv.pdf assets/images/cv-page -png -rx 300 -ry 300 
-          pdftoppm resume.pdf assets/images/resume-page -png -rx 300 -ry 300 
+          # 2. Generate PNGs ONLY for the CV
+          pdftoppm cv.pdf assets/images/cv-page -png -rx 300 -ry 300
           
           # 3. Move the compiled PDFs into the docs folder
           mv cv.pdf assets/docs/
